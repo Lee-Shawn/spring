@@ -2,12 +2,9 @@
 <beans
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
         xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context
-		http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--
         id：对象的名称，class：类的全限定名称（必须是类不能是接口）
         SomeService some = new SomeServiceImpl();
@@ -15,4 +12,10 @@
         一个bean标签声明一个对象
     -->
     <bean id="some" class="com.laughing.spring.service.impl.SomeServiceImpl" />
+
+    <bean id="student" class="com.laughing.spring.entity.Student" >
+        <!--set注入-->
+        <property name="name" value="laughing" />
+        <property name="age" value="22" />
+    </bean>
 </beans>
