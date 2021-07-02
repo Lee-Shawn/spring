@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!-- 给指定包起别名 -->
+        <package name="com.laughing.spring.domain"/>
+    </typeAliases>
+
+    <mappers>
+        <!--mapper文件名和dao接口名相同，并且和dao接口在同一个目录-->
+        <package name="com.laughing.spring.dao"/>
+    </mappers>
+</configuration>

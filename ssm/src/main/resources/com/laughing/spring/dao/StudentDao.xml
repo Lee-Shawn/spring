@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 是接口的全类名 -->
+<mapper namespace="com.laughing.spring.dao.StudentDao">
+    <select id="getStudents" resultType="com.laughing.spring.domain.Student">
+        select id, name, age from student order by id desc
+    </select>
+
+    <insert id="addStudent">
+        insert into student(name, age) values(#{name}, #{age})
+    </insert>
+
+    <select id="getStudentByPage" resultType="com.laughing.spring.domain.Student">
+        select id, name, age from student limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="getAllNum" resultType="int">
+        select count(*) from student
+    </select>
+</mapper>
