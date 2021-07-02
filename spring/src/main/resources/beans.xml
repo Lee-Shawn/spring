@@ -31,6 +31,7 @@
         <property name="school" ref="school" />
     </bean>
 
+    <!--构造器注入-->
     <bean id="laughing" class="com.laughing.spring.entity.User">
         <constructor-arg name="username" value="linus" />
         <constructor-arg name="password" value="root" />
