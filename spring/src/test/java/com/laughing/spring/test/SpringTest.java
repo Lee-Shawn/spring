@@ -1,6 +1,7 @@
 package com.laughing.spring.test;
 
 import com.laughing.spring.entity.Student;
+import com.laughing.spring.entity.User;
 import com.laughing.spring.service.SomeService;
 import com.laughing.spring.service.impl.SomeServiceImpl;
 import org.junit.Test;
@@ -33,5 +34,11 @@ public class SpringTest {
     public void testDI() {
         Student student = context.getBean("student", Student.class);
         System.out.println(student);
+    }
+
+    @Test
+    public void testReference() {
+        User user = context.getBean("user", User.class);
+        System.out.println(user);
     }
 }

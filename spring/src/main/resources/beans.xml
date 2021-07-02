@@ -18,4 +18,16 @@
         <property name="name" value="laughing" />
         <property name="age" value="22" />
     </bean>
+
+    <bean id="school" class="com.laughing.spring.entity.School">
+        <property name="name" value="ZJU" />
+        <property name="address" value="Hangzhou" />
+    </bean>
+
+    <bean id="user" class="com.laughing.spring.entity.User">
+        <property name="username" value="laughing" />
+        <property name="password" value="123456" />
+        <!--引用类型注入-->
+        <property name="school" ref="school" />
+    </bean>
 </beans>
