@@ -41,4 +41,10 @@ public class SpringTest {
         User user = context.getBean("user", User.class);
         System.out.println(user);
     }
+
+    @Test
+    public void testConstructor() {
+        User laughing = context.getBean("laughing", User.class);
+        System.out.println(laughing);
+    }
 }

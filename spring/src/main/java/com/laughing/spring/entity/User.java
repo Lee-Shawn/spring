@@ -10,6 +10,14 @@ public class User {
     private String password;
     private School school;
 
+    public User() {}
+
+    public User(String username, String password, School school) {
+        this.username = username;
+        this.password = password;
+        this.school = school;
+    }
+
     public void setSchool(School school) {
         this.school = school;
     }

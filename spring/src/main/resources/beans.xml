@@ -30,4 +30,10 @@
         <!--引用类型注入-->
         <property name="school" ref="school" />
     </bean>
+
+    <bean id="laughing" class="com.laughing.spring.entity.User">
+        <constructor-arg name="username" value="linus" />
+        <constructor-arg name="password" value="root" />
+        <constructor-arg name="school" ref="school" />
+    </bean>
 </beans>
