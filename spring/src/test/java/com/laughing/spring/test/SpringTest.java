@@ -1,11 +1,14 @@
 package com.laughing.spring.test;
 
+import com.laughing.spring.config.EmployeeConfig;
+import com.laughing.spring.entity.Employee;
 import com.laughing.spring.entity.Student;
 import com.laughing.spring.entity.User;
 import com.laughing.spring.service.SomeService;
 import com.laughing.spring.service.impl.SomeServiceImpl;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -46,5 +49,12 @@ public class SpringTest {
     public void testConstructor() {
         User laughing = context.getBean("laughing", User.class);
         System.out.println(laughing);
+    }
+
+    @Test
+    public void testAnnotation() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(EmployeeConfig.class);
+        Employee employee = context.getBean("emp", Employee.class);
+        System.out.println(employee);
     }
 }
