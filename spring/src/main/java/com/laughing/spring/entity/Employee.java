@@ -1,5 +1,7 @@
 package com.laughing.spring.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,8 +24,23 @@ import org.springframework.stereotype.Component;
  */
 @Component(value = "emp")
 public class Employee {
+    /**
+     * @Value 注入简单类型属性的值
+     *      使用该注解完成属性注入时，类中无需setter
+     *      若属性有 setter，则也可将其加到setter上
+     */
+    @Value("laughing")
     private String name;
+    @Value("22")
     private Integer age;
+    /**
+     * 引用类型
+     * @Autowired 实现引用类型的自动注入
+     * spring中通过注解给引用类型赋值，使用的是自动注入原理，支持byName，byType
+     * 默认使用byType主动注入，放在属性上面无须setter方法
+     */
+    @Autowired
+    private Company company;
 
     public Employee() {
         System.out.println("Employee无参构造器...");
@@ -34,6 +51,7 @@ public class Employee {
         return "Employee{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", company=" + company +
                 '}';
     }
 

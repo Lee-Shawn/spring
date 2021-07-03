@@ -52,6 +52,20 @@ public class SpringTest {
     }
 
     @Test
+    public void testByName() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        User user = context.getBean("user", User.class);
+        System.out.println(user);
+    }
+
+    @Test
+    public void testByType() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        User user = context.getBean("testUser", User.class);
+        System.out.println(user);
+    }
+
+    @Test
     public void testAnnotation() {
         ApplicationContext context = new AnnotationConfigApplicationContext(EmployeeConfig.class);
         Employee employee = context.getBean("emp", Employee.class);

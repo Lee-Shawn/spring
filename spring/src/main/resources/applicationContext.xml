@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--byName自动注入-->
+    <bean id="user" class="com.laughing.spring.entity.User" autowire="byName" >
+        <!--set注入-->
+        <property name="username" value="laughing" />
+        <property name="password" value="123456" />
+    </bean>
+
+    <!--id与代码中调用者的bean类的属性名相同时，可以使用byName方式-->
+    <bean id="school" class="com.laughing.spring.entity.School">
+        <property name="name" value="ZJU" />
+        <property name="address" value="Hangzhou" />
+    </bean>
+</beans>
