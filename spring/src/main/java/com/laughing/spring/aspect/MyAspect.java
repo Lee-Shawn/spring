@@ -19,8 +19,11 @@ public class MyAspect {
      * 切面方法要求：
      *     1. 方法是 public
      *     2. 方法没有返回值
+     * execution(public void com.laughing.spring.service.impl.AspectJServiceImpl.getInfo(String, Integer))
+     * execution(* *..service.impl.AspectJServiceImpl.getInfo(String, Integer))
+     * execution(* *..getInfo(..))
      */
-    @Before(value = "execution(public void com.laughing.spring.service.impl.AspectJServiceImpl.getInfo(String, Integer))")
+    @Before(value = "execution(* *..service.impl.AspectJServiceImpl.getInfo(String, Integer))")
     public void beforeAdvice() {
         System.out.println("切面功能前置通知：" + new Date());
     }
