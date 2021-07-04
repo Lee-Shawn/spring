@@ -4,6 +4,7 @@ import com.laughing.spring.config.EmployeeConfig;
 import com.laughing.spring.entity.Employee;
 import com.laughing.spring.entity.Student;
 import com.laughing.spring.entity.User;
+import com.laughing.spring.service.AspectJService;
 import com.laughing.spring.service.SomeService;
 import com.laughing.spring.service.impl.SomeServiceImpl;
 import org.junit.Test;
@@ -71,4 +72,18 @@ public class SpringTest {
         Employee employee = context.getBean("emp", Employee.class);
         System.out.println(employee);
     }
+
+    @Test
+    public void testAOPXml() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("aop.xml");
+        AspectJService proxy = context.getBean("serviceTarget", AspectJService.class);
+        proxy.getInfo("laughing", 20);
+    }
+
+    /*@Test
+    public void testAoP() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
+        AspectJServiceImpl service = context.getBean("service", AspectJServiceImpl.class);
+        System.out.println(service);
+    }*/
 }
