@@ -84,14 +84,14 @@ public class SpringTest {
     @Test
     public void testAoP() {
         ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
-        AspectJService service = context.getBean("aspectJServiceImpl", AspectJService.class);
+        AspectJService service = context.getBean("service", AspectJService.class);
         service.getInfo("laughing", 30);
     }
 
     @Test
     public void testAoPAfterReturning() {
         ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
-        AspectJService service = context.getBean("aspectJServiceImpl", AspectJService.class);
-        service.getName("laughing", 33);
+        AspectJService service = context.getBean("service", AspectJService.class);
+        String name = service.getName("laughing", 33);
     }
 }

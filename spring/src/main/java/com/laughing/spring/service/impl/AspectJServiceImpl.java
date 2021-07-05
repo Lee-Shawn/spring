@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @create : 2021-07-04 21:08
  * @description : AOP
  */
-@Component(value = "aspectJServiceImpl")
+@Component(value = "service")
 public class AspectJServiceImpl implements AspectJService {
     @Override
     public void getInfo(String name, Integer age) {
