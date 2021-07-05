@@ -7,4 +7,5 @@ package com.laughing.spring.service;
  */
 public interface AspectJService {
     void getInfo(String name, Integer age);
+    String getName(String name, Integer age);
 }

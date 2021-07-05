@@ -87,4 +87,11 @@ public class SpringTest {
         AspectJService service = context.getBean("aspectJServiceImpl", AspectJService.class);
         service.getInfo("laughing", 30);
     }
+
+    @Test
+    public void testAoPAfterReturning() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
+        AspectJService service = context.getBean("aspectJServiceImpl", AspectJService.class);
+        service.getName("laughing", 33);
+    }
 }
