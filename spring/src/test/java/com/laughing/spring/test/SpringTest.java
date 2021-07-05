@@ -1,5 +1,6 @@
 package com.laughing.spring.test;
 
+import com.laughing.spring.config.AspectConfig;
 import com.laughing.spring.config.EmployeeConfig;
 import com.laughing.spring.entity.Employee;
 import com.laughing.spring.entity.Student;
@@ -80,10 +81,10 @@ public class SpringTest {
         proxy.getInfo("laughing", 20);
     }
 
-    /*@Test
+    @Test
     public void testAoP() {
         ApplicationContext context = new AnnotationConfigApplicationContext(AspectConfig.class);
-        AspectJServiceImpl service = context.getBean("service", AspectJServiceImpl.class);
-        System.out.println(service);
-    }*/
+        AspectJService service = context.getBean("aspectJServiceImpl", AspectJService.class);
+        service.getInfo("laughing", 30);
+    }
 }
