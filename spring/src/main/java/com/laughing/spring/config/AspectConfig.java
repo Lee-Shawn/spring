@@ -13,6 +13,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 // 启动AspectJ自动代理
 @Configuration
+// @EnableAspectJAutoProxy(proxyTargetClass = true) true使用cglib动态代理，false（默认）用jdk动态代理
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = "com.laughing.spring.service.impl")
 public class AspectConfig {
