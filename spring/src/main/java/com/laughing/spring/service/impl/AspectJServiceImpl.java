@@ -17,6 +17,6 @@ public class AspectJServiceImpl implements AspectJService {
 
     @Override
     public String getName(String name, Integer age) {
-        return "laughing";
+        return "laughing learning spring aop...";
     }
 }

@@ -1,7 +1,9 @@
 package com.laughing.spring.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 
@@ -63,5 +65,46 @@ public class MyAspect {
             res = s.toUpperCase();
         }
         System.out.println("后置通知：" + res);
+    }
+
+    /**
+     * 方法是实现切面功能
+     * 切面方法要求：
+     *     1. 方法是 public
+     *     2. 方法有返回值，推荐Object
+     *     3. 方法有参数ProceedingJoinPoint
+     * @param point 动态代理的Method方法，用来执行目标方法
+     * @return 目标方法执行结果
+     *
+     * @Around 环绕通知
+     *     1. 它是功能最强的通知
+     *     2. 在目标方法前和后都能增强功能
+     *     3. 控制目标方法是否被调用执行
+     *     4. 修改目标方法的执行结果
+     *     5. 用于事务处理，在目标方法之前开启事物，执行目标方法，在目标方法之后提交事物
+     */
+    @Around(value = "execution(* *..*ServiceImpl.getName(..))")
+    public Object around(ProceedingJoinPoint point) throws Throwable {
+        String name = null;
+        Object result = null;
+        System.out.println("环绕之前：" + new Date());
+        // 实现环绕增强
+        // ProceedingJoinPoint 继承于 JoinPoint，可以获取目标方法参数
+        Object[] args = point.getArgs();
+        if (args != null && args.length > 1) {
+            Object arg = args[0];
+            name = (String) arg;
+        }
+        if ("laughing".equals(name)) {
+            // 目标方法调用
+            result = point.proceed();
+        }
+        // 修改目标方法返回结果
+        if (result != null) {
+            result = "spring AOP...";
+        }
+        System.out.println("环绕之后：" + new Date());
+
+        return result;
     }
 }
