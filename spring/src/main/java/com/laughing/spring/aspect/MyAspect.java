@@ -2,10 +2,7 @@ package com.laughing.spring.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.*;
 
 import java.util.Date;
 
@@ -83,7 +80,7 @@ public class MyAspect {
      *     4. 修改目标方法的执行结果
      *     5. 用于事务处理，在目标方法之前开启事物，执行目标方法，在目标方法之后提交事物
      */
-    @Around(value = "execution(* *..*ServiceImpl.getName(..))")
+    @Around(value = "exe()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         String name = null;
         Object result = null;
@@ -107,4 +104,7 @@ public class MyAspect {
 
         return result;
     }
+
+    @Pointcut(value = "execution(* *..*ServiceImpl.getName(..))")
+    private void exe() {}
 }
