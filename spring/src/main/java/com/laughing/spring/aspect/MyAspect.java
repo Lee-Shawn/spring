@@ -25,12 +25,12 @@ public class MyAspect {
      * execution(* *..service.impl.AspectJServiceImpl.getInfo(String, Integer))
      * execution(* *..getInfo(..))
      */
-    @Before(value = "execution(* *..service.impl.AspectJServiceImpl.getInfo(String, Integer))")
+    @Before(value = "execution(* *..service.impl.AspectJServiceImpl.*(String, Integer))")
     public void beforeAdvice() {
         System.out.println("切面功能前置通知beforeAdvice：" + new Date());
     }
 
-    @Before(value = "execution(* *..*ServiceImpl.getInfo(..))")
+    @Before(value = "execution(* *..*ServiceImpl.*(..))")
     public void before(JoinPoint joinPoint) {
         System.out.println("连接点方法定义：" + joinPoint.getSignature());
         System.out.println("连接点方法参数个数：" + joinPoint.getArgs().length);
