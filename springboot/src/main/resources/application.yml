@@ -9,3 +9,6 @@ person:
 language:
   - java
   - go
+
+go: 'fmt.Println()'
+java: "System.out.println()"
