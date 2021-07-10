@@ -28,6 +28,7 @@ public class HelloController {
 
     @GetMapping("/name")
     public String getName() {
+        System.out.println(golang);
         return name + " " + pName + " " + language;
     }
 
