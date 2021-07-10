@@ -1,0 +1,11 @@
+server:
+  port: 8888
+
+# 对象
+person:
+  name: laughing
+
+# 数组
+language:
+  - java
+  - go
