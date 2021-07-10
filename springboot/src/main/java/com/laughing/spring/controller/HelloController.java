@@ -23,6 +23,9 @@ public class HelloController {
     @Value("${language[0]}")
     private String language;
 
+    @Value("${go}")
+    private String golang;
+
     @GetMapping("/name")
     public String getName() {
         return name + " " + pName + " " + language;
