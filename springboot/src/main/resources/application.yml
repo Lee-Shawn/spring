@@ -1,3 +1,8 @@
+# 切换配置文件
+spring:
+  profiles:
+    active: tests
+---
 server:
   port: 8888
 
@@ -14,3 +19,27 @@ language:
 
 go: 'fmt.Println()'
 java: "System.out.println()"
+
+spring:
+  profiles: devp
+---
+server:
+  port: 8899
+
+database: redis
+
+# 对象
+person:
+  name: laughing
+
+# 数组
+language:
+  - java
+  - go
+
+go: 'fmt.Println()'
+java: "System.out.println()"
+
+spring:
+  profiles: tests
+---
