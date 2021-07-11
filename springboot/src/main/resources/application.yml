@@ -17,6 +17,7 @@ language:
   - java
   - go
 
+# 单引号不会识别转义字符，双引号可以识别转义字符
 go: 'fmt.Println()'
 java: "System.out.println()"
 
