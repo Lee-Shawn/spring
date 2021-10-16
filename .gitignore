@@ -1,12 +1,12 @@
 # Project exclude paths
-/springMVC/target/
+/spring-mvc/target/
 /ssm/target/
 /spring/target/
 .idea
-springboot/.mvn
+spring-boot/.mvn
 **/target
-/springboot/mvnw
-/springboot/mvnw.cmd
-/springMVC/springMVC.iml
+/spring-boot/mvnw
+/spring-boot/mvnw.cmd
+/spring-mvc/spring-mvc.iml
 /ssm/ssm.iml
 /spring/spring.iml
