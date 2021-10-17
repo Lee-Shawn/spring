@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" th:href="@{css/login.css}">
+        <title>登陆</title>
+    </head>
+
+    <body>
+        <div id="loginDiv">
+            <form action="/login" id="form" method="post">
+                <h1 style="text-align: center;color: aliceblue;">登陆</h1>
+                <p>帐号:<input id="username" name="username" type="text" placeholder="用户帐号"><label id="name_trip"></label></p>
+
+                <p>密码:<input id="password" name="password" type="password" placeholder="用户密码"><label id="password_trip"></label></p>
+
+                <div style="text-align: center;margin-top: 30px;">
+                    <input type="submit" class="button"  value="登陆">
+                    <input type="reset" class="button" value="重置">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

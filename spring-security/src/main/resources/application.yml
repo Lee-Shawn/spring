@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:                      # 模版引擎
+    cache: false                  # 缓存，默认开启，开发时可以设置关闭
+    check-template: true          # 检查模版是否存在，默认为 true
+    check-template-location: true # 检查模版位置是否存在，默认为 true
+    encoding: UTF-8               # 模版文件编码
+    prefix: classpath:/templates/           # 模版文件位置
+    servlet:
+      content-type: text/html     # 文件类型
+    suffix: .html                 # 文件后缀
+
+  security:                       # spring security
+    user:
+      name: laughing              # 帐号
+      password: laughing          # 密码
+      roles: admin                # 权限
