@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * @author : laughing
  * @create : 2021-10-16 18:41
- * @description :
+ * @description : 整合thymeleaf模版引擎
  */
 @Controller
 public class ThymeleafController {
